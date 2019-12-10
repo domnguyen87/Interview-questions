@@ -20,3 +20,11 @@ function vowels(str) {
 }
 
 //Solution 2
+function vowels(str) {
+    //g = don't stop, i = insensitive to lowercase
+    const matches = str.match(/[aeiou]/gi)
+    
+    // teritary function. If matches is true, return length.
+    // If it's false which is NULL, return 0
+    return matches ? matches.length : 0
+}
