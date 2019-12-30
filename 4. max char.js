@@ -13,8 +13,8 @@ const string = "Hello There!"
 const chars = {}
 
 for (let char of string) {
-    if(!chars[char]) {
-        chars[char] =1;
+    if (!chars[char]) {
+        chars[char] = 1;
     } else {
         chars[char]++
     }
@@ -22,7 +22,7 @@ for (let char of string) {
 
 //Shorter version with tertinary operator
 for (let char of string) {
-    chars[char] = chars[char] +1 || 1;
+    chars[char] = chars[char] + 1 || 1;
 }
 
 chars;
@@ -30,10 +30,12 @@ chars;
 // **SOLUTION**
 function maxChar(str) {
     const charMap = {}
+    let max = 0
+    let maxChar = '';
 
     for (let char of str) {
-        if(charMap[char]) {
-            charMap[char] ++;
+        if (charMap[char]) {
+            charMap[char]++;
         } else {
             charMap[char] = 1
         }
@@ -42,9 +44,58 @@ function maxChar(str) {
     //when iterating through an object, use IN, not of
 
     for (let char in charMap) {
-        if(charMap > max) {
+        if (charMap[char] > max) {
             max = charMap[char];
             maxChar = char;
+        }
+    }
+
+    return maxChar
+}
+
+//practice 1
+function maxChar(str) {
+    const charMap = {}
+    let max = 0
+    let maxChar = ''
+
+    for (let char of str) {
+        if (charMap[char]) {
+            charMap[char]++;
+        } else {
+            charMap[char] = 1
+        }
+    }
+
+    for (let char in charMap) {
+        if (charMap[char] > max) {
+            max = charMap[char];
+            maxChar = char;
+        }
+    }
+
+    return maxChar;
+}
+
+//practice 2
+
+function maxChar(str) {
+    const charMap = {}
+    let max = 0
+    let maxChar = ''
+
+    for (let char of str) {
+        if (charMap[char]) {
+            charMap[char]++;
+        } else {
+            charMap[char] = 1;
+        }
+    }
+
+    for (let char in charMap) {
+        if (charMap[char] > max) {
+            max = charMap[char]
+            maxChar = char
         }
     }
 
