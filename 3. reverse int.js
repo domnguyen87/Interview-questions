@@ -29,3 +29,16 @@ function reverseInt(n) {
 }
 
 module.export = reverseInt;
+
+//practice 1
+function reverseInt(n) {
+    const reversed = n.toString().split('').reverse().join('')
+
+    if (n < 0) {
+        return parseInt(reversed) * -1
+    }
+    return parseInt(reversed)
+
+    //Another solution
+    // return ParseInt(reversed) * Math.sign(n)
+}
