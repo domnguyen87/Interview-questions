@@ -13,7 +13,7 @@
 //word.replace(/[^\w]/g, " ").lowercase === hithere
 
 //Solution 1
-function anagrams (stringA, stringB) {
+function anagrams(stringA, stringB) {
     const aCharMap = buildCharMap(stringA);
     const bCharMap = buildCharMap(stringB);
 
@@ -21,12 +21,11 @@ function anagrams (stringA, stringB) {
         return false;
     }
 
-    for(let char in aCharMap) {
+    for (let char in aCharMap) {
         if (aCharMap[char] !== bCharMap[char]) {
             return false;
         }
     }
-
     return true;
 }
 
@@ -34,16 +33,43 @@ function anagrams (stringA, stringB) {
 function buildCharMap(str) {
     const charMap = {};
 
-    for ( let char of str.replace(/[^\w]/g, '').toLowerCase()){
+    for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
         charMap[char] = charMap[char] + 1 || 1
     }
 
     return charMap
 }
 
+//practice 1
+function buildCharMap(str) {
+    const charMap = {}
+    for (let char of str.replace('regex').toLowerCase()) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+
+    return charMap
+}
+
+function anagrams(stringA, stringB) {
+    const aCharMap = buildCharMap(stringA);
+    const bCharMap = buildCharMap(stringB);
+
+    if (Object.keys(aCharMap).length !== Object.keys(bCharMap).lenght) {
+        return false;
+    }
+
+    for (let char in aCharMap) {
+        if (aCharMap[char] !== bCharMap[char]) {
+            return false;
+        }
+    }
+
+    return true
+}
+
 //Solution 2
-function anagrams(stringA, stringB){
-    return  clearnString(stringA) === cleanString(stringB)
+function anagrams(stringA, stringB) {
+    return clearnString(stringA) === cleanString(stringB)
 }
 
 function cleanString(str) {
@@ -53,4 +79,19 @@ function cleanString(str) {
         .split('')
         .sort()
         .join('')
+}
+
+//Practice 2
+
+function cleanString(str) {
+    return str
+        .replace("regex")
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('')
+}
+
+function anagram(stringA, stringB) {
+    return cleanString(stringA) === cleanString(stringB)
 }

@@ -24,5 +24,17 @@ function palindrome(str) {
     });
 }
 
+//Practice 1
+function palindrome(str) {
+    let reversed = str.split('').reverse().join('')
 
-module.exports = palindrome;
+    return str === reversed
+                        
+}
+
+//Practice 2
+function palindrome(str) {
+    return str.split('').every((char, i) => {
+        return char === str[str.length - i - 1]
+    } )
+}
