@@ -36,6 +36,22 @@ function steps(n){
     }
 }
 
+//Practice #1
+function steps(n) {
+    for (let row = 0; row < n; row++) {
+        let stairs = "";
+
+        for (column = 0; column < n; column++) {
+            if ( column <= row) {
+                stairs += "#";
+            } else {
+                stairs += " ";
+            }
+        }
+    console.log(stairs);
+    }
+}
+
 //***Recursive solution*/
 //HINT
 //Figure out the bare miniuum pieces of information to represent your problem
