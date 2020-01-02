@@ -42,6 +42,24 @@ function pyramid(n) {
     }
 }
 
+//Practice 1
+function pyramid(n) {
+    for (let row = 0; row < n; row++) {
+        const midpoint = Math.floor((2 * n - 1) / 2);
+
+        let levels = "";
+
+        for (let col = 0; col < 2*n-1; col++) {
+            if (midpoint - row <= col && midpoint + row >= col) {
+                levels += "#";;
+            } else {
+                levels += ""
+            }
+        }
+        console.log(levels)
+    }
+}
+
 //Solution 2 ***Recursion
 function pyramid(n, row = 0, level = "") {
     //basecase
