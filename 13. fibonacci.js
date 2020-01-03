@@ -29,6 +29,15 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2)
 }
 
+//Practice
+function fib(n) {
+    if (n < 2) {
+        return n
+    }
+
+    return fib(n - 1) + fib(n - 2)
+}
+
 //Solution above is an exponential run time, take a long time to run
 //Question interviewer might ask : Is there to improve the runtime?
 //Answer

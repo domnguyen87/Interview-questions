@@ -34,6 +34,20 @@ function vowels(str) {
     return numOfVowels;
 }
 
+//practice
+function vowels(str) {
+    const checker = ['a', 'e', 'i', 'o', 'u']
+    let vowels = 0
+
+    for (let char of str.toLowerCase) {
+        if (checker.includes(char)) {
+            vowels++
+        }
+    }
+
+    return vowels
+}
+
 //Solution 2
 function vowels(str) {
     //g = don't stop, i = insensitive to lowercase
